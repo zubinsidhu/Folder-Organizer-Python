@@ -4,7 +4,8 @@ import os
 import shutil 
 
 #Stores the path to the downloads folder to be organized
-path = '/Users/zubinsidhu/Downloads'
+#In this program I sorted my downloads folder
+path = 'Users/zubinsidhu/Downloads'
 
 #Gets a list of all the files and directories in the path
 list_ = os.listdir(path)
@@ -19,10 +20,10 @@ for file_ in list_:
 	if ext == '': 
 		continue
     #Determines if a directory is already named after the file
-	if os.path.exists(path+'/'+ext): 
+	if os.path.exists(path + '/' + ext): 
         #Moves to existing directory
-		shutil.move(path+'/'+file_, path+'/'+ext+'/'+file_)
+		shutil.move(path + '/' + file_, path + '/' + ext + '/' + file_)
 	#Makes a new directory and moves file there
 	else: 
-		os.makedirs(path+'/'+ext) 
-		shutil.move(path+'/'+file_, path+'/'+ext+'/'+file_)
+		os.makedirs(path + '/' + ext) 
+		shutil.move(path + '/' + file_, path + '/' + ext + '/' + file_)
